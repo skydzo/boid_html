@@ -1,0 +1,125 @@
+html, body {
+    margin: 0;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+  }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.Intro {
+    position:fixed;
+}
+
+.canvas{
+    background-color: #121212;
+}
+
+.topnav {
+    position: absolute;
+    right:20px;
+    margin-top: 10px;
+}
+
+.img{
+    color: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 20px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
+}
+
+
+
+.controls{
+    padding-left: 1.5em;
+    padding-top: 1.5em;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.controls-text{
+}
+
+.title-center{
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+}
+
+.title{
+    font-size: 3rem;
+    color: white;
+    opacity:0;
+    animation: fadeIn ease 3s forwards;
+    animation-delay: 1.0s;
+    -webkit-animation: fadeIn ease 3s forwards;
+    -webkit-animation-delay: 1.0s;
+}
+
+.sub-title{
+    font-size: 2.5rem;
+    color: white;
+    opacity:0;
+    animation: fadeIn ease 3s forwards;
+    animation-delay: 2.5s;
+    -webkit-animation: fadeIn ease 3s forwards;
+    -webkit-animation-delay: 2.5s;
+
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
