@@ -363,6 +363,11 @@ canvas.addEventListener("touchstart", function(e) {
     }
 });
 
+canvas.addEventListener("touchend", function(e) { 
+        boidController.mousePosition_X = -100;
+        boidController.mousePosition_Y = -100;
+});
+
 
 
 canvas.addEventListener("click", function(e) { 
