@@ -387,5 +387,5 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    //e.preventDefault();
+    e.preventDefault();
   }, false);
