@@ -100,6 +100,12 @@ body::-webkit-scrollbar {
 
 }
 
+.svg-container{
+    position: absolute;
+    width: 500px  !important;
+    height: 150px  !important;
+}
+
 @media screen and (max-width: 640px) {
     .title{
         font-size: 1.5rem;
@@ -116,7 +122,11 @@ body::-webkit-scrollbar {
     .controls-text{
         font-size: 10px;
     }
-    
+
+    .svg-container{
+        width: 250  !important;
+        height: 75px  !important;
+    }
 
   }
 
