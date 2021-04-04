@@ -339,6 +339,15 @@ canvas.addEventListener("mousemove", function(e) {
     boidController.mousePosition_Y = canvasY;
 });
 
+canvas.addEventListener("touchmove", function(e) { 
+    var cRect = canvas.getBoundingClientRect();
+    var canvasX = Math.round(e.clientX - cRect.left);
+    var canvasY = Math.round(e.clientY - cRect.top);   
+    boidController.mousePosition_X = canvasX;
+    boidController.mousePosition_Y = canvasY;
+});
+
+
 
 canvas.addEventListener("click", function(e) { 
     var cRect = canvas.getBoundingClientRect();
