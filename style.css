@@ -57,13 +57,14 @@ body::-webkit-scrollbar {
 
 
 .controls{
-    padding-left: 1.5em;
-    padding-top: 1.5em;
+    padding-left: 0.5em;
+    padding-top: 5em;
     position: absolute;
     color: rgba(255, 255, 255, 0.2);
 }
 
 .controls-text{
+    font-size: 20px;
 }
 
 .title-center{
@@ -98,6 +99,26 @@ body::-webkit-scrollbar {
     -webkit-animation-delay: 2.5s;
 
 }
+
+@media screen and (max-width: 640px) {
+    .title{
+        font-size: 1.5rem;
+    }
+
+    .sub-title{
+        font-size: 1rem;
+    }
+
+    .topnav a {
+        font-size: 10px;
+    }
+
+    .controls-text{
+        font-size: 10px;
+    }
+    
+
+  }
 
 @keyframes fadeIn {
     0% {opacity:0;}
