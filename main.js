@@ -343,8 +343,8 @@ canvas.addEventListener("touchmove", function(e) {
     var cRect = canvas.getBoundingClientRect();
     var canvasX = Math.round(e.touches[0].clientX - cRect.left);
     var canvasY = Math.round(e.touches[0].clientY - cRect.top);   
-    boidController.mousePosition_X = canvasX;
-    boidController.mousePosition_Y = canvasY;
+    boidController.mousePosition_X = e.touches[0].clientX;
+    boidController.mousePosition_Y = e.touches[0].clientY;
 });
 
 canvas.addEventListener("touchstart", function(e) { 
@@ -352,8 +352,8 @@ canvas.addEventListener("touchstart", function(e) {
         var cRect = canvas.getBoundingClientRect();
         var posX = Math.round(e.touches[0].clientX - cRect.left);
         var posY = Math.round(e.touches[0].clientY - cRect.top);
-        boidController.feedPosition_X = posX;
-        boidController.feedPosition_Y = posY;
+        boidController.feedPosition_X = e.touches[0].clientX;
+        boidController.feedPosition_Y = e.touches[0].clientY;
         boidController.haveFeedOnScreen = true;
     }
 });
