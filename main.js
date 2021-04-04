@@ -8,7 +8,7 @@ canvas.height = innerHeight - navbarSize
 c.fillStyle = "red";
 
 class Boid {
-    constructor(x,y,xDir,yDir){
+    constructor(x,y,xDir,yDir,size){
         // Position
         this.x = x;
         this.y = y;
@@ -25,7 +25,7 @@ class Boid {
         this.color = [0,0,0];
 
         this.isInZone = false;
-        this.size = 5;
+        this.size = size;
         this.changeColor = false;
         this.zoomColor = [0,0,0]
     }
@@ -56,9 +56,8 @@ class Boid {
 }
 
 class BoidController{
-    constructor(boidNumber,boidColor){
+    constructor(boidNumber,boidsSize){
         this.boidNumber = boidNumber;
-        this.boidColor = boidColor;
 
         this.visionRange = 500;
         this.separation = 15;
@@ -84,12 +83,12 @@ class BoidController{
         this.feedPosition_Y = 0;
 
         this.haveFeedOnScreen = false;
-        this.boidsSize = 5;
+        this.boidsSize = boidsSize;
     }
 
     init(){
         for(let i=0;i<this.boidNumber;i++){
-            this.boids.push(new Boid(this.randomNumber(0,canvas.width),this.randomNumber(0,canvas.height),this.randomNumber(-1,1),this.randomNumber(-1,1)));
+            this.boids.push(new Boid(this.randomNumber(0,canvas.width),this.randomNumber(0,canvas.height),this.randomNumber(-1,1),this.randomNumber(-1,1),this.boidsSize));
         }
     }
 
@@ -326,8 +325,14 @@ class BoidController{
     }
 }
 
+var boidController;
 
-const boidController = new BoidController(300,'red');
+if(canvas.width < 640){
+    boidController = new BoidController(150,3);
+}else{
+    boidController = new BoidController(300,5);
+}
+
 boidController.init();
 boidController.draw();
 
