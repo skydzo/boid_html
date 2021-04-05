@@ -56,10 +56,10 @@ class Boid {
 }
 
 class BoidController{
-    constructor(boidNumber,boidsSize,separation,mouseDodgeDistance,speedlimit){
+    constructor(boidNumber,boidsSize,visionRange,separation,mouseDodgeDistance,speedlimit){
         this.boidNumber = boidNumber;
 
-        this.visionRange = 500;
+        this.visionRange = visionRange;
         this.separation = separation;
         this.mouseDodgeDistance = mouseDodgeDistance;
 
@@ -328,9 +328,9 @@ class BoidController{
 var boidController;
 
 if(canvas.width < 640){
-    boidController = new BoidController(150,3,9.3,100,0.5);
+    boidController = new BoidController(150,3,200,7,100,0.5);
 }else{
-    boidController = new BoidController(300,5,15,100,1);
+    boidController = new BoidController(300,5,500,15,100,1);
 }
 
 boidController.init();
