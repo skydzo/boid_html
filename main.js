@@ -374,7 +374,7 @@ canvas.addEventListener("click", function(e) {
     var cRect = canvas.getBoundingClientRect();
     var canvasX = Math.round(e.clientX - cRect.left);
     var canvasY = Math.round(e.clientY - cRect.top);
-    boidController.boids.push(new Boid(canvasX,canvasY,Math.random() * (1 - (-1)) + (-1),Math.random() * (1 - (-1)) + (-1),'red'))
+    boidController.boids.push(new Boid(canvasX,canvasY,Math.random() * (1 - (-1)) + (-1),Math.random() * (1 - (-1)) + (-1),boidController.boidsSize))
 });
 
 window.addEventListener("resize", function(e){
@@ -406,7 +406,7 @@ window.addEventListener("wheel", event => {
     if(wheelValue > 9){
         wheelValue = 9;
     }
-    boidController.changeBoidSize(RemapValue(Math.exp(wheelValue),[0,5000],[5,500]));
+    boidController.changeBoidSize(RemapValue(Math.exp(wheelValue),[0,5000],[5,800]));
     boidController.changeBoidColor(wheelValue,RemapValue(Math.exp(wheelValue),[0,5000],[50,255]))
     console.log(RemapValue(Math.exp(wheelValue),[0,5000],[150,255]));
 });
