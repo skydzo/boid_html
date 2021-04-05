@@ -167,7 +167,7 @@ class BoidController{
     moveFromMiddle(boid){
         var newDir = [0,0];
         var zoneSize = [500,150];
-        if(canvas.width < 640){
+        if(canvas.width < 900){
             zoneSize = [250,75]
         }
         if((boid.x > (canvas.width / 2) - (zoneSize[0] / 2) && boid.x < (canvas.width / 2) + (zoneSize[0] / 2)) && (boid.y > (canvas.height / 2) - (zoneSize[1] / 2) && boid.y < (canvas.height / 2) + (zoneSize[1] / 2) )){

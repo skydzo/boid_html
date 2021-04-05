@@ -124,7 +124,7 @@ body::-webkit-scrollbar {
     }
 
     .svg-container{
-        width: 250  !important;
+        width: 250px  !important;
         height: 75px  !important;
     }
 
