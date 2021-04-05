@@ -31,21 +31,33 @@ class Boid {
     }
 
     draw(){
+
+        c.beginPath();
+        c.arc(this.x-3,this.y+3,this.size+this.size*0.4,0,Math.PI*2,false);
+        c.fillStyle = "rgba(0,0,0,0.2)";
+        c.fill();
+
         c.beginPath();
         c.arc(this.x,this.y,this.size,0,Math.PI*2,false);
         if(this.isInZone == false){
             if(this.changeColor == true){
                 this.color = this.zoomColor;
                 c.fillStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";
+                //c.strokeStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";
+
             }else{
                 this.color = [this.scaleValue(this.xDir*10,[-10,10],[255,255]),this.scaleValue(this.yDir*10,[-10,10],[50,150]),0]
                 c.fillStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";
+                //c.strokeStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";
+
             }
         }else{
-            //c.fillStyle = "rgba(255,255,255,1)";
+            this.color = [this.scaleValue(this.xDir*10,[-10,10],[255,255]),this.scaleValue(this.yDir*10,[-10,10],[50,150]),0]
+            c.fillStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";        
         }
 
         c.fill();
+
     }
 
     scaleValue(value, from, to) {
