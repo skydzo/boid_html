@@ -327,7 +327,7 @@ class BoidController{
 
 var boidController;
 
-if(canvas.width < 850){
+if(canvas.width < 900){
     boidController = new BoidController(150,3,180,7,100,0.5);
 }else{
     boidController = new BoidController(300,5,500,15,100,1);

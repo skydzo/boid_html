@@ -106,7 +106,7 @@ body::-webkit-scrollbar {
     height: 150px  !important;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
     .title{
         font-size: 1.5rem;
     }
