@@ -328,7 +328,7 @@ class BoidController{
 var boidController;
 
 if(canvas.width < 640){
-    boidController = new BoidController(150,3,200,7,100,0.5);
+    boidController = new BoidController(150,3,150,7,100,0.5);
 }else{
     boidController = new BoidController(300,5,500,15,100,1);
 }
@@ -420,5 +420,5 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    e.preventDefault();
+    //e.preventDefault();
   }, false);
