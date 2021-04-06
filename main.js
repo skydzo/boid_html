@@ -33,8 +33,8 @@ class Boid {
     draw(){
 
         c.beginPath();
-        c.arc(this.x-3,this.y+3,this.size+this.size*0.4,0,Math.PI*2,false);
-        c.fillStyle = "rgba(0,0,0,0.2)";
+        c.arc(this.x-1.5,this.y+1.5,this.size+this.size*0.4,0,Math.PI*2,false);
+        c.fillStyle = "rgba(0,0,0,0.1)";
         c.fill();
 
         c.beginPath();
