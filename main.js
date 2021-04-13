@@ -32,14 +32,17 @@ class Boid {
 
     draw(){
 
-        c.beginPath();
-        c.arc(this.x-1.5,this.y+1.5,this.size+this.size*0.4,0,Math.PI*2,false);
-        c.fillStyle = "rgba(0,0,0,0.1)";
-        c.fill();
+        if(this.changeColor == false && this.size < 50){
+            c.beginPath();
+            c.arc(this.x-1.5,this.y+1.5,this.size+this.size*0.4,0,Math.PI*2,false);
+            c.fillStyle = "rgba(0,0,0,0.025)";
+            c.fill();
+        }
+
 
         c.beginPath();
         c.arc(this.x,this.y,this.size,0,Math.PI*2,false);
-        if(this.isInZone == false){
+        //if(this.isInZone == false){
             if(this.changeColor == true){
                 this.color = this.zoomColor;
                 c.fillStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";
@@ -51,10 +54,10 @@ class Boid {
                 //c.strokeStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";
 
             }
-        }else{
+        /*}else{
             this.color = [this.scaleValue(this.xDir*10,[-10,10],[255,255]),this.scaleValue(this.yDir*10,[-10,10],[50,150]),0]
             c.fillStyle = "rgba("+this.color[0]+"," +this.color[1]+","+this.color[2]+", 0.5)";        
-        }
+        }*/
 
         c.fill();
 
@@ -320,15 +323,15 @@ class BoidController{
     }
 
     changeBoidColor(wheelValue,color){
-        if(wheelValue < 6.5){
+        if(wheelValue < 300){
             for(let i=0;i<this.boids.length;i++){
                 this.boids[i].changeColor = false;
             }
         }else{
             for(let i=0;i<this.boids.length;i++){
                 this.boids[i].changeColor = true;
-                this.boids[i].zoomColor = [255,RemapValue(Math.exp(wheelValue),[0,5000],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),255]),RemapValue(Math.exp(wheelValue),[0,5000],[0,255])];
-                console.log("zoomcolor = " + color);
+                //this.boids[i].zoomColor = [255,RemapValue(wheelValue,[0,800],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),255]),RemapValue(wheelValue,[0,800],[0,255])];
+                this.boids[i].zoomColor = [RemapValue(wheelValue,[0,800],[255,33]),RemapValue(wheelValue,[0,800],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),33]),RemapValue(wheelValue,[0,800],[0,33])];
 
             }
 
@@ -386,7 +389,9 @@ canvas.addEventListener("click", function(e) {
     var cRect = canvas.getBoundingClientRect();
     var canvasX = Math.round(e.clientX - cRect.left);
     var canvasY = Math.round(e.clientY - cRect.top);
-    boidController.boids.push(new Boid(canvasX,canvasY,Math.random() * (1 - (-1)) + (-1),Math.random() * (1 - (-1)) + (-1),boidController.boidsSize))
+    if(window.scrollY < 500){
+        boidController.boids.push(new Boid(canvasX,canvasY,Math.random() * (1 - (-1)) + (-1),Math.random() * (1 - (-1)) + (-1),boidController.boidsSize))
+    }
 });
 
 window.addEventListener("resize", function(e){
@@ -394,19 +399,59 @@ window.addEventListener("resize", function(e){
     canvas.height = innerHeight - navbarSize
 });
 
-window.addEventListener('scroll', function(e) {
-    derniere_position_de_scroll_connue = window.scrollY;
-    console.log("Scroll");
 
+
+
+window.addEventListener('scroll', function(e) {
+    var scrollPos_Y = window.scrollY;
+    console.log(window.scrollY)
+
+    boidController.changeBoidSize(RemapValue(scrollPos_Y,[0,800],[5,800]));
+    //boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[50,255]));
+    boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[255,33]));
+
+    var canvas = document.getElementById("canvas");
+    var topnav = document.getElementById("id-topnav");
+    var textpresentation = document.getElementById("id-text-presentation");
+    var imgpresentation = document.getElementById("id-img-presentation");
+    var centertitle = document.getElementById("id-title-center");
+    var container = document.getElementById("id-container");
+
+    centertitle.style.opacity = 1-(RemapValue(scrollPos_Y,[0,800],[0,100])/100);
+
+
+    
+
+
+    if(scrollPos_Y > 800){
+        //window.scrollTo(0, 801);
+
+        canvas.style.position = "relative";
+        topnav.style.position = "fixed";
+        topnav.style.setProperty("background-color","rgba(33, 33, 33, 1)","important");
+        textpresentation.classList.add("class-fadein");
+        imgpresentation.classList.add("class-fadein");
+        container.classList.add("class-fadein");
+
+    }else{
+        canvas.style.position = "fixed"
+        topnav.style.position = "absolut";
+        topnav.style.setProperty("background-color","rgba(33, 33, 33, 0)","important")
+        textpresentation.classList.remove("class-fadein");
+        imgpresentation.classList.remove("class-fadein");
+        container.classList.remove("class-fadein");
+    }
 });
 
-var wheelValue = 0.0;
 
 function RemapValue(value, from, to) {
     var scale = (to[1] - to[0]) / (from[1] - from[0]);
     var capped = Math.min(from[1], Math.max(from[0], value)) - from[0];
     return ~~(capped * scale + to[0]);
 }
+
+/*
+var wheelValue = 0.0;
 
 window.addEventListener("wheel", event => {
     const delta = Math.sign(event.deltaY);
@@ -422,7 +467,7 @@ window.addEventListener("wheel", event => {
     boidController.changeBoidColor(wheelValue,RemapValue(Math.exp(wheelValue),[0,5000],[50,255]))
     console.log(RemapValue(Math.exp(wheelValue),[0,5000],[150,255]));
 });
-
+*/
 document.addEventListener("contextmenu", function(e){
     if(!boidController.haveFeedOnScreen){
         var cRect = canvas.getBoundingClientRect();
@@ -432,5 +477,30 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    e.preventDefault();
+    //e.preventDefault();
   }, false);
+
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
+function menuclick(name){
+    switch(name){
+        case 'Home':
+            window.scrollTo(0, 0);
+            break;
+        case 'About':
+            window.scrollTo(0, 850);
+            break;
+        case 'Realtime':
+            window.scrollTo(0, 850);
+            break;
+        case 'Web':
+            window.scrollTo(0, 850);
+            break;
+        case 'Robotics':
+            window.scrollTo(0, 850);
+            break;
+    }
+};

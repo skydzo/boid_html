@@ -1,10 +1,50 @@
 html, body {
     margin: 0;
+    background-color: #212121;
     -webkit-user-select: none;  
     -moz-user-select: none;    
     -ms-user-select: none;      
     user-select: none;
-  }
+    scroll-behavior: smooth;
+}
+
+.topnav{
+    width: 100%;
+    height: 50px;
+    margin-top:0 !important;
+    right: 0 !important;
+    padding-right: 20px;
+    padding-top: 10px;
+    background-color: rgba(33, 33, 33, 0) !important ;
+    color: #5a5a5a !important;
+    pointer-events: all !important;
+    opacity: 100% !important;
+    position:fixed !important;
+    z-index: 8;
+}
+
+.badge{
+    background-color:#ffa024  !important;
+}
+
+a{
+    color: #5a5a5a !important;
+    pointer-events: all !important;
+    opacity: 100% !important;
+}
+
+a:hover{
+    color: #f1f1f1 !important;
+    pointer-events: all !important;
+    opacity: 100% !important;
+}
+
+.container-fluid {
+    background-color: #212121;
+    color: white;
+    opacity: 0%;
+    pointer-events: none;
+}
 
 body::-webkit-scrollbar {
     display: none;
@@ -12,11 +52,9 @@ body::-webkit-scrollbar {
 
 .Intro {
     position:fixed;
+    background-color: #212121;
 }
 
-.canvas{
-    background-color: #121212;
-}
 
 .topnav {
     position: absolute;
@@ -28,6 +66,25 @@ body::-webkit-scrollbar {
     color: rgba(255, 255, 255, 0.5);
     width: 20px;
     height: 20px;
+}
+
+.div-title{
+    font-size: 3rem;
+    color: white;
+}
+
+.rounded-img{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-cropper{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
 }
 
 /* Style the links inside the navigation bar */
@@ -48,6 +105,7 @@ body::-webkit-scrollbar {
 /* Add a color to the active/current link */
 .topnav a.active {
 }
+
 
 /* Right-aligned section inside the top navigation */
 .topnav-right {
@@ -97,7 +155,22 @@ body::-webkit-scrollbar {
     animation-delay: 2.5s;
     -webkit-animation: fadeIn ease 3s forwards;
     -webkit-animation-delay: 2.5s;
+}
 
+
+.text-presentation{
+    opacity:0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.img-presentation{
+    opacity:0;
+}
+
+.class-fadein{
+    animation: fadeIn ease 2s forwards;
+    -webkit-animation: fadeIn ease 2s forwards;
 }
 
 .svg-container{

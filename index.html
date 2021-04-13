@@ -12,16 +12,18 @@
     <title>AnthonyBlond</title>
   </head>
   <body>
-    <div class="Intro">
-      <div class="topnav">
-        <div class="topnav-right">
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-          </div>
-      </div>
 
+    <div id="id-topnav" class="topnav">
+      <div class="topnav-right">
+          <a onclick="menuclick('Home')">Home</a>
+          <a onclick="menuclick('About')">About me</a>
+          <a onclick="menuclick('Realtime')">Realtime development</a>
+          <a onclick="menuclick('Web')">Web development</a>
+          <a onclick="menuclick('Robotics')">Robotics</a>
+        </div>
+    </div>
+
+    <div class="Intro" id="canvas">
       <div class="controls">
           <img class="img" src="./computer-mouse.png"></img>
           <a class="controls-text"> to spawn a new boid</a>
@@ -31,7 +33,7 @@
       </div>
 
 
-      <div class="title-center">
+      <div id="id-title-center" class="title-center">
           <svg viewBox="0 0 500 150" class="svg-container" >
             <!--<circle cx="10" cy="10" r="2" fill="red"/>
             <circle cx="10" cy="50" r="2" fill="white"/>
@@ -50,6 +52,305 @@
 
     </div>
 
+    <div id="id-container" class="container-fluid">
+      <div class="row">
+        <div class="col div-title ">
+          ABOUT ME
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="id-img-presentation" class="col-xl-4 col-md-5 col-12 img-presentation">
+          <div class="img-cropper">
+            <img src="./assets/pp2.jpg" class="rounded-img">
+          </div>
+        </div>
+
+        <div id="id-text-presentation" class="col-xl col-md col-12 text-presentation">
+          <p>My name is <b>Anthony Blond</b>, I was born in 1995 and I live in Lyon (France). I'm a passionate <b>game developer</b> but I also work on web technologies and robotics.
+            <br>As a Programmer, I love <b>resolving challenges</b> , <b>creating programs</b> and <b>searching for the best solution</b>.
+            <!--<br>I'm fascinated by all technologies and all that people can think about and create.-->
+            <br>Apart from development I enjoy <b>climbing</b> and <b>volley</b>. I'm also playing games like <b>Rocket League</b>, <b>Dofus</b> and I'm waiting for <b>Ratchet and Clank</b> on PS5.</p>
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h1>REALTIME DEVELOPMENT</h1>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <p>I started to develop video games at University. I decided to remake Binding of Isaac using C and the SDL library. This project took me hours and hours, trying to find the algorithm of tile generation. With this project I found out what I want to do in my future so I started doing GameJams and learning.
+            I met UnivrStudio in 2017 and games becomes my daily life. UnivrStudio quickly change to Unreal Engine 4, so I learned it.
+            Besides game development I’m interested by the rendering, that’s why I’m taking math courses to reinforce my bases. I started to develop in openGL.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <h2>GGJ 2021 - Lost & Found</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <h2>EpicMegaJam 2020 - </h2>
+        </div>
+      </div>
+
+      <!-- SCENARIO MANAGER------------------------------------------------------------>
+
+      <div class="row">
+        <div class="col">
+          <h2>SCENARIOS MANAGER</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>This core feature allows creation and management of complex scenarios, starting with a spreadsheet for non-programmer users.
+            We can use this tool as the conductor of a game.
+            
+            This feature was done on Unreal Engine 4 in C++. It's accessible everywhere in blueprints as in C++ with main functions, in interfaces and fully network replicated.
+            
+            This tool convert the spreadsheet to JSON to an object that we can see as a tree. This tree represent a series of steps that users must complete. You are able to lock the user in the tree, to allows him to skip steps or adding some errors. You can also add visual effects on objects according to the steps. At the end of the experience, you can retrieve all datas like errors or just informations about the steps. Datas are saved as a JSON and linked to the desktop web solution</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">Gamestate</span>
+          <span class="badge badge-secondary">Plugin</span>
+          <span class="badge badge-secondary">Networking</span>
+          <span class="badge badge-secondary">Data</span>
+          <span class="badge badge-secondary">Management</span>
+          <span class="badge badge-secondary">JSON</span>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------>
+      <!-- AVATAR CUSTOMIZATION------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>AVATAR CUSTOMIZATION</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>This tool allows you to customize your virtual reality COVID friendly avatar.
+            It's done with Unreal Engine 4 using Blueprints and C++.
+            
+            This feature is linked with a desktop web solution to save your avatar with your profile.
+            
+            The avatar have a 5 points IK where the body is calculated with hands to dissociate head and upper body movements.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">Template</span>
+          <span class="badge badge-secondary">Networking</span>
+          <span class="badge badge-secondary">IK</span>
+          <span class="badge badge-secondary">UI</span>
+          <span class="badge badge-secondary">VR</span>
+          <span class="badge badge-secondary">JSON</span>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------>
+      <!-- VR COMPUTER SCREEN UI------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>VR COMPUTER SCREEN UI</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>This tool allows you to add customizable virtual reality control screen.
+
+            Thanks to this feature you can interact with the player or add great elements like realtime radiographies.
+            
+            It's done with Unreal Engine 4 in C++, taking a widget as a parameter, and can be completely managed.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">Slate</span>
+          <span class="badge badge-secondary">C++</span>
+          <span class="badge badge-secondary">UI</span>
+          <span class="badge badge-secondary">VR</span>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------>
+      <!-- VR COMPUTER SCREEN UI------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>VR TOOLS</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>This class cover a bunch of really precise VR interactions embedded in for surgical uses.
+            This feature was done with Unreal Engine 4 with only Blueprints.
+            
+            Thanks to this system you can create a tool with part of other tools. You can manage the insertion and extractions, slider movement, screwing, different types of rotations, a tilt movement or all of them at same time.
+            
+            The class is fully replicated and optimized for networking. It's linked with the experience management system to manage tools according to the steps.
+            You can choose to lock the user or let him play with all the real possibilities. Finally you can choose to add a undo system to go back where you want in the manipulation.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">Plugin</span>
+          <span class="badge badge-secondary">Networking</span>
+          <span class="badge badge-secondary">UX</span>
+          <span class="badge badge-secondary">VR</span>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------>
+      <!-- BOID FLOCKING------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>BOID FLOCKING</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Here's a little implementation of 3D boids algorithm from Craig W. Reynolds.
+
+            This project was done in C++ with Unreal Engine 4. I tried to optimize as much as possible with multithreading, code and rendering optimization. The project is also fully editor customizable.
+            
+            Boids can evolve in one or multiple families. They also can be hunted by predators.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">C++</span>
+          <span class="badge badge-secondary">Multithread</span>
+          <span class="badge badge-secondary">Instanced StaticMesh</span>
+          <span class="badge badge-secondary">Optimization</span>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------>
+      <!-- STACKABLE------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>STACKABLE</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>This tool allows to stack items in a custom container.
+
+            This feature was made on Unreal Engine 4 with mainly C++, optimized for Oculus Quest usage.
+            
+            You can stack any object in any container defined by a size of a 3 dimensional grid and a rotation rule. The program will search for a solution and stack the object if found.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">Plugin</span>
+          <span class="badge badge-secondary">C++</span>
+          <span class="badge badge-secondary">3D Grid</span>
+          <span class="badge badge-secondary">VR</span>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------>
+      <!-- Projects overview------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>Projects overview</h2>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------>
+
+
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h1>WEB DEVELOPMENT</h1>
+        </div>
+      </div>
+
+      <!-- UNIVRSTORE------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>UNIVRSTORE</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>UnivrStore is a web based desktop solution for VR application management.
+
+            It allows you to manage the users (create organizations, adding user's roles and permissions), localization (add languages and manage translations) and provide a licensing system.
+            
+            You can upload, manage and update your VR application. It also handle sessions creation and a browsing management system.
+            
+            The application can receive automatic update from the server in order to download the last update of the client and can also work offline with cached memory management.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">Electron</span>
+          <span class="badge badge-secondary">Laravel</span>
+          <span class="badge badge-secondary">Angular</span>
+          <span class="badge badge-secondary">VR</span>
+        </div>
+      </div>
+      <!------------------------------------------------------------------------------>
+
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h1>ROBOTICS</h1>
+        </div>
+      </div>
+
+      <!-- Security Robot------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>Security Robot</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>This beautiful little companion allows me to spy my cat when I am not at home.
+
+            It is controllable through a web interface.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="badge badge-secondary">Flask</span>
+          <span class="badge badge-secondary">Angular</span>
+          <span class="badge badge-secondary">Raspberry</span>
+        </div>
+      </div>
+      <!------------------------------------------------------------------------------>
+      <!-- Security Robot------------------------------------------------------------>
+      <div class="row">
+        <div class="col">
+          <h2>A* Thymio</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>This project is an implementation of A* algorithm on a Thymio.
+            The robot is able to search the exit of a labyrinth and go back to the entrance using the shortest path.</p>
+        </div>
+      </div>
+      <!------------------------------------------------------------------------------>
+    </div>
 
 
     <script src="./main.js"></script>
