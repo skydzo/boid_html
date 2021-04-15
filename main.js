@@ -404,7 +404,7 @@ window.addEventListener("resize", function(e){
 
 window.addEventListener('scroll', function(e) {
     var scrollPos_Y = window.scrollY;
-    console.log(window.scrollY)
+    //console.log(window.scrollY)
 
     boidController.changeBoidSize(RemapValue(scrollPos_Y,[0,800],[5,800]));
     //boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[50,255]));
@@ -432,6 +432,8 @@ window.addEventListener('scroll', function(e) {
         textpresentation.classList.add("class-fadein");
         imgpresentation.classList.add("class-fadein");
         container.classList.add("class-fadein");
+        container.style.setProperty("pointer-events","all","important")
+
 
     }else{
         canvas.style.position = "fixed"
@@ -440,6 +442,8 @@ window.addEventListener('scroll', function(e) {
         textpresentation.classList.remove("class-fadein");
         imgpresentation.classList.remove("class-fadein");
         container.classList.remove("class-fadein");
+        container.style.setProperty("pointer-events","none","important")
+
     }
 });
 
@@ -477,7 +481,7 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    //e.preventDefault();
+    e.preventDefault();
   }, false);
 
 
