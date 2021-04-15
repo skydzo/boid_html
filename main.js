@@ -4,8 +4,6 @@ const navbarSize = 0//61.1
 
 canvas.width = innerWidth
 canvas.height = innerHeight - navbarSize
-console.log(canvas.width)
-const customWidth = canvas.width/2+100
 
 c.fillStyle = "red";
 
@@ -333,7 +331,7 @@ class BoidController{
             for(let i=0;i<this.boids.length;i++){
                 this.boids[i].changeColor = true;
                 //this.boids[i].zoomColor = [255,RemapValue(wheelValue,[0,800],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),255]),RemapValue(wheelValue,[0,800],[0,255])];
-                this.boids[i].zoomColor = [RemapValue(wheelValue,[0,customWidth],[255,33]),RemapValue(wheelValue,[0,customWidth],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),33]),RemapValue(wheelValue,[0,customWidth],[0,33])];
+                this.boids[i].zoomColor = [RemapValue(wheelValue,[0,800],[255,33]),RemapValue(wheelValue,[0,800],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),33]),RemapValue(wheelValue,[0,800],[0,33])];
 
             }
 
@@ -344,7 +342,7 @@ class BoidController{
 
 var boidController;
 
-if(canvas.width < customWidth+100){
+if(canvas.width < 900){
     boidController = new BoidController(150,3,180,7,100,0.5);
 }else{
     boidController = new BoidController(300,5,500,15,100,1);
@@ -408,7 +406,7 @@ window.addEventListener('scroll', function(e) {
     var scrollPos_Y = window.scrollY;
     //console.log(window.scrollY)
 
-    boidController.changeBoidSize(RemapValue(scrollPos_Y,[0,customWidth],[5,customWidth]));
+    boidController.changeBoidSize(RemapValue(scrollPos_Y,[0,800],[5,800]));
     //boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[50,255]));
     boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[255,33]));
 
@@ -419,13 +417,13 @@ window.addEventListener('scroll', function(e) {
     var centertitle = document.getElementById("id-title-center");
     var container = document.getElementById("id-container");
 
-    centertitle.style.opacity = 1-(RemapValue(scrollPos_Y,[0,customWidth],[0,100])/100);
+    centertitle.style.opacity = 1-(RemapValue(scrollPos_Y,[0,800],[0,100])/100);
 
 
     
 
 
-    if(scrollPos_Y > customWidth){
+    if(scrollPos_Y > 800){
         //window.scrollTo(0, 801);
 
         canvas.style.position = "relative";
