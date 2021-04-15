@@ -229,6 +229,11 @@ body::-webkit-scrollbar {
     height: 150px  !important;
 }
 
+.video{
+    width:480px;
+    height: 270px;  
+}
+
 @media screen and (max-width: 900px) {
     .title{
         font-size: 1.5rem;
@@ -249,6 +254,11 @@ body::-webkit-scrollbar {
     .svg-container{
         width: 250px  !important;
         height: 75px  !important;
+    }
+
+    .video{
+        width:240px;
+        height: 135px;
     }
 
   }
