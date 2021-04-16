@@ -412,6 +412,7 @@ window.addEventListener('scroll', function(e) {
 
     var canvas = document.getElementById("canvas");
     var topnav = document.getElementById("id-topnav");
+    var footer = document.getElementById("id-footer");
     var textpresentation = document.getElementById("id-text-presentation");
     var imgpresentation = document.getElementById("id-img-presentation");
     var centertitle = document.getElementById("id-title-center");
@@ -428,7 +429,9 @@ window.addEventListener('scroll', function(e) {
 
         canvas.style.position = "relative";
         topnav.style.position = "fixed";
+        footer.style.position = "fixed";
         topnav.style.setProperty("background-color","rgba(33, 33, 33, 1)","important");
+        footer.style.setProperty("background-color","rgba(33, 33, 33, 1)","important");
         textpresentation.classList.add("class-fadein");
         imgpresentation.classList.add("class-fadein");
         container.classList.add("class-fadein");
@@ -438,7 +441,10 @@ window.addEventListener('scroll', function(e) {
     }else{
         canvas.style.position = "fixed"
         topnav.style.position = "absolut";
+        footer.style.position = "absolut";
         topnav.style.setProperty("background-color","rgba(33, 33, 33, 0)","important")
+        footer.style.setProperty("background-color","rgba(33, 33, 33, 0)","important")
+
         textpresentation.classList.remove("class-fadein");
         imgpresentation.classList.remove("class-fadein");
         container.classList.remove("class-fadein");

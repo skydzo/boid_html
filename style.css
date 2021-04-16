@@ -23,6 +23,48 @@ html, body {
     z-index: 8;
 }
 
+.footer{
+    width: 100%;
+    height: 30px;
+    right: 0 !important;
+    padding-right: 20px;
+    background-color: rgba(33, 33, 33, 0) !important ;
+    color: #5a5a5a !important;
+    pointer-events: all !important;
+    opacity: 100% !important;
+    position:fixed;
+    bottom:0;
+    z-index: 8;
+}
+
+.footer-email{
+    position: absolute;
+    padding-left: 10px;
+}
+
+.footer-link{
+    padding-left: 50%;
+    padding-top: 0px;
+
+}
+
+.icon-img{
+    margin-right: 10px;
+    height: 20px;  /*height of icon */
+    width: 20px;  /*width of icon */
+    filter: invert(35%) sepia(1%) saturate(0%) hue-rotate(266deg) brightness(95%) contrast(86%);
+}
+
+.icon-img:hover{
+    filter: invert(100%) sepia(3%) saturate(618%) hue-rotate(12deg) brightness(99%) contrast(109%);
+}
+
+
+.icon-yt{
+    height: 20px;  /*height of icon */
+    width: 28px;  /*width of icon */
+}
+
 .section{
     padding-top: 20px;
     padding-left: 15%;
@@ -106,7 +148,8 @@ body::-webkit-scrollbar {
 }
 
 .img{
-    color: rgba(255, 255, 255, 0.5);
+    margin-top: -5px;
+    filter: invert(35%) sepia(1%) saturate(0%) hue-rotate(266deg) brightness(95%) contrast(86%);
     width: 20px;
     height: 20px;
 }
