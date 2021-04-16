@@ -1,9 +1,12 @@
-const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d')
-const navbarSize = 0//61.1
+const canvas = document.querySelector('canvas');
+const c = canvas.getContext('2d');
+const navbarSize = 0;//61.1
 
-canvas.width = innerWidth
-canvas.height = innerHeight - navbarSize
+canvas.width = innerWidth;
+canvas.height = innerHeight - navbarSize;
+
+const scrollHeight = canvas.height - 200;
+console.log(scrollHeight);
 
 c.fillStyle = "red";
 
@@ -335,7 +338,7 @@ class BoidController{
             for(let i=0;i<this.boids.length;i++){
                 this.boids[i].changeColor = true;
                 //this.boids[i].zoomColor = [255,RemapValue(wheelValue,[0,800],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),255]),RemapValue(wheelValue,[0,800],[0,255])];
-                this.boids[i].zoomColor = [RemapValue(wheelValue,[0,800],[255,33]),RemapValue(wheelValue,[0,800],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),33]),RemapValue(wheelValue,[0,800],[0,33])];
+                this.boids[i].zoomColor = [RemapValue(wheelValue,[0,scrollHeight],[255,33]),RemapValue(wheelValue,[0,scrollHeight],[this.boids[i].scaleValue(this.boids[i].yDir*10,[-10,10],[50,150]),33]),RemapValue(wheelValue,[0,scrollHeight],[0,33])];
 
             }
 
@@ -346,7 +349,7 @@ class BoidController{
 
 var boidController;
 
-if(canvas.width < 900){
+if(canvas.width < scrollHeight+100){
     boidController = new BoidController(150,3,180,7,100,0.5);
 }else{
     boidController = new BoidController(300,5,500,15,100,1);
@@ -410,9 +413,9 @@ window.addEventListener('scroll', function(e) {
     var scrollPos_Y = window.scrollY;
     //console.log(window.scrollY)
 
-    boidController.changeBoidSize(RemapValue(scrollPos_Y,[0,800],[5,800]));
+    boidController.changeBoidSize(RemapValue(scrollPos_Y,[0,scrollHeight],[5,scrollHeight]));
     //boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[50,255]));
-    boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[255,33]));
+    boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,scrollHeight],[255,33]));
 
     var canvas = document.getElementById("canvas");
     var topnav = document.getElementById("id-topnav");
@@ -422,13 +425,13 @@ window.addEventListener('scroll', function(e) {
     var centertitle = document.getElementById("id-title-center");
     var container = document.getElementById("id-container");
 
-    centertitle.style.opacity = 1-(RemapValue(scrollPos_Y,[0,800],[0,100])/100);
+    centertitle.style.opacity = 1-(RemapValue(scrollPos_Y,[0,scrollHeight],[0,100])/100);
 
 
     
 
 
-    if(scrollPos_Y > 800){
+    if(scrollPos_Y > scrollHeight){
         //window.scrollTo(0, 801);
         boidController.isRunning = false;
 
