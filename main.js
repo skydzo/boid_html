@@ -99,6 +99,8 @@ class BoidController{
 
         this.haveFeedOnScreen = false;
         this.boidsSize = boidsSize;
+
+        this.isRunning = true;
     }
 
     init(){
@@ -109,24 +111,26 @@ class BoidController{
 
     draw(){
         setInterval(()=>{
-        	 c.clearRect(0, 0, canvas.width, canvas.height);
+            if(this.isRunning){
+                c.clearRect(0, 0, canvas.width, canvas.height);
 
-             if(this.haveFeedOnScreen){
-                c.beginPath();
-                c.arc(this.feedPosition_X,this.feedPosition_Y,15,0,Math.PI*2,false);
-                c.fillStyle = "rgba(255,255,255,1)";
-                c.fill();
-             }
-
-            for(let i=0;i<this.boids.length;i++){
-            	var newDirection = this.calculateNewPosition(this.boids[i],this.boids[i].xDir,this.boids[i].yDir);
-                var limitedDirection = this.limitSpeed(newDirection);
-            	let predx = this.boids[i].x;
-            	let predy = this.boids[i].y;
-                this.boids[i].x = this.boids[i].x + limitedDirection[0];
-                this.boids[i].y = this.boids[i].y + limitedDirection[1];
-                this.boids[i].draw();
-                this.initDirection(this.boids[i],predx,predy);
+                if(this.haveFeedOnScreen){
+                   c.beginPath();
+                   c.arc(this.feedPosition_X,this.feedPosition_Y,15,0,Math.PI*2,false);
+                   c.fillStyle = "rgba(255,255,255,1)";
+                   c.fill();
+                }
+   
+               for(let i=0;i<this.boids.length;i++){
+                   var newDirection = this.calculateNewPosition(this.boids[i],this.boids[i].xDir,this.boids[i].yDir);
+                   var limitedDirection = this.limitSpeed(newDirection);
+                   let predx = this.boids[i].x;
+                   let predy = this.boids[i].y;
+                   this.boids[i].x = this.boids[i].x + limitedDirection[0];
+                   this.boids[i].y = this.boids[i].y + limitedDirection[1];
+                   this.boids[i].draw();
+                   this.initDirection(this.boids[i],predx,predy);
+               }
             }
         },0)
     }
@@ -426,6 +430,7 @@ window.addEventListener('scroll', function(e) {
 
     if(scrollPos_Y > 800){
         //window.scrollTo(0, 801);
+        boidController.isRunning = false;
 
         canvas.style.position = "relative";
         topnav.style.position = "fixed";
@@ -439,6 +444,8 @@ window.addEventListener('scroll', function(e) {
 
 
     }else{
+        boidController.isRunning = true;
+
         canvas.style.position = "fixed"
         topnav.style.position = "absolut";
         footer.style.position = "absolut";
@@ -487,7 +494,7 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    e.preventDefault();
+    //e.preventDefault();
   }, false);
 
 

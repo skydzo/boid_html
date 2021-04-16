@@ -40,16 +40,17 @@ html, body {
 .footer-email{
     position: absolute;
     padding-left: 10px;
+    margin-top: 5px;
 }
 
 .footer-link{
     padding-left: 50%;
+    margin-left: -50px;
     padding-top: 0px;
-
 }
 
 .icon-img{
-    margin-right: 10px;
+    margin-right: 25px;
     height: 20px;  /*height of icon */
     width: 20px;  /*width of icon */
     filter: invert(35%) sepia(1%) saturate(0%) hue-rotate(266deg) brightness(95%) contrast(86%);
@@ -290,6 +291,11 @@ body::-webkit-scrollbar {
         font-size: 10px;
     }
 
+    .footer-email {
+        font-size: 10px;
+    }
+
+
     .controls-text{
         font-size: 10px;
     }
@@ -309,6 +315,12 @@ body::-webkit-scrollbar {
     .a-menu{
         padding-left: 0px !important;
         padding-right: 2px !important;
+    }
+
+    .footer-link{
+        padding-left: 65%;
+        margin-left: -50px;
+        padding-top: 0px;
     }
   }
 
