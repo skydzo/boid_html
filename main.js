@@ -6,7 +6,6 @@ canvas.width = innerWidth;
 canvas.height = innerHeight - navbarSize;
 
 const scrollHeight = canvas.height - 200;
-console.log(scrollHeight);
 
 c.fillStyle = "red";
 
@@ -497,7 +496,7 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    //e.preventDefault();
+    e.preventDefault();
   }, false);
 
 
