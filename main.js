@@ -329,7 +329,7 @@ class BoidController{
     }
 
     changeBoidColor(wheelValue,color){
-        if(wheelValue < 300){
+        if(wheelValue < 100){
             for(let i=0;i<this.boids.length;i++){
                 this.boids[i].changeColor = false;
             }
@@ -496,7 +496,7 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    e.preventDefault();
+    //e.preventDefault();
   }, false);
 
 

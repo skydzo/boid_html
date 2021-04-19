@@ -37,6 +37,33 @@ html, body {
     z-index: 8;
 }
 
+.gif-wrapper{
+    width: 360px;
+    height: 200px;
+    margin-top: 50px;
+
+}
+
+.top-gif{
+    position: absolute;
+    margin-top: 50px;
+    background-color: rgba(	255, 160, 36, 0.7);
+    width: 360px;
+    height: 15px;
+}
+
+.top-gif-txt{
+    color:white;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.gif{
+    width: 360px;
+    height: 200px;
+
+}
+
 .footer-email{
     position: absolute;
     padding-left: 10px;
