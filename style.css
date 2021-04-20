@@ -336,7 +336,60 @@ body::-webkit-scrollbar {
         width:240px;
         height: 135px;
     }
+
+    .gif-wrapper{
+        width: 360px;
+        height: 150px;    
+    }
+    
+    .top-gif{
+        width: 180px;
+        height: 15px;
+    }
+    
+    .gif{
+        width: 180px;
+        height: 100px;
+    
+    }
   }
+
+  @media screen and (max-width: 1500px) {
+    .gif-wrapper{
+        width: 280px;
+        height: 153px;    
+    }
+    
+    .top-gif{
+        width: 280px;
+        height: 15px;
+    }
+    
+    .gif{
+        width: 280px;
+        height: 153px;
+    
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .gif-wrapper{
+        width: 240px;
+        height: 133px;    
+    }
+    
+    .top-gif{
+        width: 240px;
+        height: 15px;
+    }
+    
+    .gif{
+        width: 240px;
+        height: 133px;
+    
+    }
+  }
+
 
   @media screen and (max-width: 480px) {
     .a-menu{
@@ -348,6 +401,11 @@ body::-webkit-scrollbar {
         padding-left: 65%;
         margin-left: -50px;
         padding-top: 0px;
+    }
+
+    .video{
+        width:240px;
+        height: 135px;
     }
   }
 
