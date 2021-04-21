@@ -64,6 +64,58 @@ html, body {
 
 }
 
+
+.gif-avatar-container{
+    width: 314px;
+    height: 230px;
+}
+
+.gif-avatar{
+    width: 100%;
+    height: 100%;
+}
+
+
+.gif-menu-container{
+    width: 580px;
+    height: 325;
+}
+
+.gif-menu{
+    width: 100%;
+    height: 100%;
+}
+
+
+.gif-univrstore{
+    width: 500px;
+    height: 280px;
+}
+
+.gif-univrstore-top{
+    width: 500px;
+    height: 280px;
+}
+
+.gif-container-tool{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    width: 312px;
+    height: 234px;
+}
+
+.gif-tool{
+    width: 100%;
+    height: 100%;
+}
+
+.top-gif-tool{
+    position: absolute;
+    background-color: rgba(	255, 160, 36, 0.7);
+    width: 312px;
+    height: 15px;
+}
+
 .footer-email{
     position: absolute;
     padding-left: 10px;
@@ -305,6 +357,7 @@ body::-webkit-scrollbar {
     height: 270px;  
 }
 
+
 @media screen and (max-width: 900px) {
     .title{
         font-size: 1.5rem;
@@ -350,7 +403,38 @@ body::-webkit-scrollbar {
     .gif{
         width: 180px;
         height: 100px;
+    }
+
+    .gif-univrstore{
+        width: 350px;
+        height: 190px;
+    }
+
+    .gif-univrstore-top{
+        width: 350px;
+        height: 190px;
+    }
+
+    .gif-container-tool{
+        width: 240px;
+        height: 180px;
+    }
     
+    .top-gif-tool{
+        width: 240px;
+        height: 15px;
+    }
+  }
+
+  @media screen and (max-width: 1900px) {
+    .gif-container-tool{
+        width: 240px;
+        height: 180px;
+    }
+    
+    .top-gif-tool{
+        width: 240px;
+        height: 15px;
     }
   }
 
@@ -370,6 +454,12 @@ body::-webkit-scrollbar {
         height: 153px;
     
     }
+
+    .gif-univrstore{
+        width: 400px;
+        height: 220px;
+    }
+    
   }
 
   @media screen and (max-width: 1200px) {
@@ -386,8 +476,15 @@ body::-webkit-scrollbar {
     .gif{
         width: 240px;
         height: 133px;
-    
     }
+
+    .gif-univrstore{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 350px;
+        height: 190px;
+    }
+
   }
 
 
@@ -406,6 +503,18 @@ body::-webkit-scrollbar {
     .video{
         width:240px;
         height: 135px;
+    }
+
+    .gif-univrstore{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 240px;
+        height: 133px;
+    }
+
+    .gif-univrstore-top{
+        width: 240px;
+        height: 133px;
     }
   }
 
