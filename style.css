@@ -64,6 +64,10 @@ html, body {
 
 }
 
+p.list{
+    margin-bottom: 5px !important;
+}
+
 
 .gif-avatar-container{
     width: 314px;
@@ -77,11 +81,42 @@ html, body {
 
 
 .gif-menu-container{
+    padding-top: 10px;
+
     width: 580px;
-    height: 325;
+    height: 325px;
 }
 
 .gif-menu{
+    width: 100%;
+    height: 100%;
+}
+
+.gif-robot-container{
+    padding-top: 10px;
+    width: 214px;
+    height: 272px;
+}
+
+.gif-robot-img-container{
+    padding-top: 10px;
+    width: 250px;
+    height: 250px;
+}
+
+.gif-thymio-container{
+    padding-top: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+.gif-thymio-img-container{
+    padding-top: 10px;
+    width: 166px;
+    height: 143px;
+}
+
+.robot-img{
     width: 100%;
     height: 100%;
 }
@@ -488,6 +523,38 @@ body::-webkit-scrollbar {
   }
 
 
+
+  @media screen and (max-width: 800px) {
+    .gif-menu-container{
+        width: 386px;
+        height: 216px;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .gif-robot-container{
+        padding-top: 10px;
+        width: 142px;
+        height: 181px;
+    }
+    
+    .gif-robot-img-container{
+        padding-top: 10px;
+        width: 165px;
+        height: 165px;
+    }
+
+}
+
+
+
+
   @media screen and (max-width: 480px) {
     .a-menu{
         padding-left: 0px !important;
@@ -516,6 +583,29 @@ body::-webkit-scrollbar {
         width: 240px;
         height: 133px;
     }
+
+    .gif-avatar-container{
+        width: 241px;
+        height: 170px;
+    }
+   
+    .gif-menu-container{
+        width: 240px;
+        height: 135px;
+    }
+
+    .gif-thymio-container{
+        padding-top: 10px;
+        width: 170px;
+        height: 70px;
+    }
+    
+    .gif-thymio-img-container{
+        padding-top: 10px;
+        width: 127px;
+        height: 110px;
+    }
+
   }
 
   
