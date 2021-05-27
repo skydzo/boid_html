@@ -407,10 +407,13 @@ window.addEventListener("resize", function(e){
 
 
 
+window.addEventListener('scroll',function(e){
+    OnScrollFunction();
+});
 
-window.addEventListener('scroll', function(e) {
+function OnScrollFunction(){
     var scrollPos_Y = window.scrollY;
-    //console.log(window.scrollY)
+    disableScroll();
 
     boidController.changeBoidSize(RemapValue(scrollPos_Y,[0,scrollHeight],[5,scrollHeight]));
     //boidController.changeBoidColor(scrollPos_Y,RemapValue(scrollPos_Y,[500,800],[50,255]));
@@ -426,10 +429,6 @@ window.addEventListener('scroll', function(e) {
 
     centertitle.style.opacity = 1-(RemapValue(scrollPos_Y,[0,scrollHeight],[0,100])/100);
 
-
-    
-
-
     if(scrollPos_Y > scrollHeight){
         //window.scrollTo(0, 801);
         boidController.isRunning = false;
@@ -443,8 +442,6 @@ window.addEventListener('scroll', function(e) {
         imgpresentation.classList.add("class-fadein");
         container.classList.add("class-fadein");
         container.style.setProperty("pointer-events","all","important")
-
-
     }else{
         boidController.isRunning = true;
 
@@ -458,9 +455,31 @@ window.addEventListener('scroll', function(e) {
         imgpresentation.classList.remove("class-fadein");
         container.classList.remove("class-fadein");
         container.style.setProperty("pointer-events","none","important")
-
     }
-});
+  }
+
+var isscrolling = false;
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop = 
+      window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = 
+      window.pageXOffset || document.documentElement.scrollLeft;
+
+        // if any scroll is attempted,
+        // set this to the previous value
+        console.log("value : " + scrollTop);
+        if(scrollTop >= 200 && scrollTop < 800 && isscrolling == false){
+            isscrolling = true;
+            disableScroll2();
+            window.scrollTo(0,850);
+            setTimeout(enableScroll2,2000)
+        }
+
+        if(scrollTop >= 850 && isscrolling == true){
+            isscrolling = false;
+        }
+}
 
 
 function RemapValue(value, from, to) {
