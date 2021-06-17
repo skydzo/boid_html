@@ -532,13 +532,13 @@ function menuclick(name){
             window.scrollTo(0, 850);
             break;
         case 'Realtime':
-            window.scrollTo(0, 850);
+            window.scrollTo(0, 1850);
             break;
         case 'Web':
-            window.scrollTo(0, 850);
+            window.scrollTo(0, 6830);
             break;
         case 'Robotics':
-            window.scrollTo(0, 850);
+            window.scrollTo(0, 7935);
             break;
     }
 };
