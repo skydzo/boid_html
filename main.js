@@ -468,7 +468,7 @@ function disableScroll() {
 
         // if any scroll is attempted,
         // set this to the previous value
-        console.log("value : " + scrollTop);
+        //console.log("value : " + scrollTop);
         if(scrollTop >= 200 && scrollTop < 800 && isscrolling == false){
             isscrolling = true;
             disableScroll2();

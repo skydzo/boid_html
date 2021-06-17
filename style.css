@@ -484,6 +484,10 @@ body::-webkit-scrollbar {
         font-size: 1.5rem;
     }
 
+    .card-title-experience{
+        font-size: 2rem;
+    }
+
     .sub-title{
         font-size: 1rem;
     }
@@ -691,7 +695,6 @@ body::-webkit-scrollbar {
         width: 127px;
         height: 110px;
     }
-
   }
 
   
