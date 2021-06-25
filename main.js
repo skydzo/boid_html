@@ -515,7 +515,9 @@ document.addEventListener("contextmenu", function(e){
         boidController.feedPosition_Y = posY;
         boidController.haveFeedOnScreen = true;
     }
-    e.preventDefault();
+    if(boidController.isRunning){
+        e.preventDefault();
+    }
   }, false);
 
 

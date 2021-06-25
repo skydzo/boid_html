@@ -8,6 +8,10 @@ html, body {
     scroll-behavior: smooth;
 }
 
+p{
+    text-align:justify!important;
+}
+
 .topnav{
     width: 100%;
     height: 50px;
@@ -48,10 +52,11 @@ yellowColor{
 
 .card-experience{
     border: 0px solid rgba(	255, 160, 36, 0.7);
+    margin-bottom: 17px;
 }
 
 .card :hover{
-    background-color: #ffa024;
+    /*background-color: #ffa024;*/
 }
 
 .card-title{
@@ -82,17 +87,22 @@ yellowColor{
     margin-top: 20px;
     height: 1px;
     width: 100%;
-    background-color: white;
+    background-color: #ffa024;
 }
 
 .card-title-experience{
-    margin-top: -45px;
-    font-size: 2.5rem;
+    margin-top: -40px;
+    font-size: 1.6rem;
 }
 .card-body-experience{
     background-color: #252525;
     padding-left: 50px;
     padding-right: 50px;
+}
+.title-skills{
+    padding-left: 30px;
+    margin-top: -40px;
+    font-size: 1.6rem;
 }
 
 .card-skills{
@@ -105,13 +115,13 @@ yellowColor{
 }
 
 .card-title-skills{
-
 }
 
 .card-text-skills{
     color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     margin-bottom: 10px;
+    text-align:unset!important;
 
 }
 .gif-wrapper{
@@ -228,10 +238,20 @@ p.list{
     height: 15px;
 }
 
+
+.footer{
+    pointer-events: all !important;
+    user-select: all !important;
+    -webkit-user-select:text !important;  
+    -moz-user-select: text !important;    
+    -ms-user-select: text !important;  
+}
+
 .footer-email{
     position: absolute;
     padding-left: 10px;
     margin-top: 5px;
+    color: rgba(	255, 255, 255, 0.4) !important;
 }
 
 .footer-link{
@@ -328,6 +348,10 @@ a:hover{
     padding-bottom: 30px;
 }
 
+.section-title-about{
+}
+
+
 .section-sub-title{
     padding-top: 30px;
 }
@@ -377,7 +401,7 @@ body::-webkit-scrollbar {
 /* Style the links inside the navigation bar */
 .topnav a {
 
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4)!important;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -386,11 +410,13 @@ body::-webkit-scrollbar {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1)!important;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
+    color: rgba(255, 255, 255, 1);
+
 }
 
 
@@ -405,7 +431,7 @@ body::-webkit-scrollbar {
     padding-left: 0.5em;
     padding-top: 5em;
     position: absolute;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .controls-text{
