@@ -72,6 +72,11 @@ class Boid {
     }
 }
 
+let divideTickrate = 1;
+let predDirTickX = [];
+let predDirTickY = [];
+
+
 class BoidController{
     constructor(boidNumber,boidsSize,visionRange,separation,mouseDodgeDistance,speedlimit){
         this.boidNumber = boidNumber;
@@ -111,6 +116,7 @@ class BoidController{
         }
     }
 
+
     draw(){
         setInterval(()=>{
             if(this.isRunning){
@@ -122,17 +128,39 @@ class BoidController{
                    c.fillStyle = "rgba(255,255,255,1)";
                    c.fill();
                 }
+
+                if(divideTickrate == 1){
+                    predDirTickX = [];
+                    predDirTickY = [];
+                }
    
                for(let i=0;i<this.boids.length;i++){
-                   var newDirection = this.calculateNewPosition(this.boids[i],this.boids[i].xDir,this.boids[i].yDir);
-                   var limitedDirection = this.limitSpeed(newDirection);
-                   let predx = this.boids[i].x;
-                   let predy = this.boids[i].y;
-                   this.boids[i].x = this.boids[i].x + limitedDirection[0];
-                   this.boids[i].y = this.boids[i].y + limitedDirection[1];
-                   this.boids[i].draw();
-                   this.initDirection(this.boids[i],predx,predy);
+                   if(divideTickrate == 1){
+                        var newDirection = this.calculateNewPosition(this.boids[i],this.boids[i].xDir,this.boids[i].yDir);
+                        var limitedDirection = this.limitSpeed(newDirection);
+                        predDirTickX.push(limitedDirection[0]);
+                        predDirTickY.push(limitedDirection[1]);
+                        let predx = this.boids[i].x;
+                        let predy = this.boids[i].y;
+                        this.boids[i].x = this.boids[i].x + limitedDirection[0];
+                        this.boids[i].y = this.boids[i].y + limitedDirection[1];
+                        this.boids[i].draw();
+                        this.initDirection(this.boids[i],predx,predy);
+                   }else{
+                    let predx = this.boids[i].x;
+                    let predy = this.boids[i].y;
+                    this.boids[i].x = this.boids[i].x + predDirTickX[i];
+                    this.boids[i].y = this.boids[i].y + predDirTickY[i];
+                    this.boids[i].draw();
+                    this.initDirection(this.boids[i],predx,predy);
+                   }
                }
+               
+               if(divideTickrate == 1){
+                divideTickrate = 0;
+                }
+
+               divideTickrate++;
             }
         },0)
     }
